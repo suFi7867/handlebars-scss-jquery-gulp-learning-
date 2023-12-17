@@ -1,10 +1,8 @@
-command : sass -w app.scss app.css
-// for compile
 
 
-Variables:
-scss
-Copy code
+// SCSS Cheat Sheet
+// Variables:
+
 $primary-color: #3498db;
 $font-size: 16px;
 
@@ -12,9 +10,11 @@ body {
   background-color: $primary-color;
   font-size: $font-size;
 }
-Nesting:
-scss
-Copy code
+
+
+
+// Nesting:
+
 nav {
   ul {
     margin: 0;
@@ -32,9 +32,10 @@ nav {
     }
   }
 }
-Mixins:
-scss
-Copy code
+
+
+// Mixins:
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -44,25 +45,24 @@ Copy code
 .box {
   @include border-radius(10px);
 }
-Partials:
-Create a partial file named _variables.scss:
 
-scss
-Copy code
+
+
+// Partials:
+// Create a partial file named _variables.scss:
+
 // _variables.scss
 $primary-color: #3498db;
-In your main SCSS file:
 
-scss
-Copy code
 @import 'variables';
 
 body {
   background-color: $primary-color;
 }
-Extend/Inheritance:
-scss
-Copy code
+
+
+// Extend/Inheritance:
+
 %message-box {
   border: 1px solid #ccc;
   padding: 10px;
@@ -78,16 +78,17 @@ Copy code
   @extend %message-box;
   background-color: #f2dede;
 }
-Operators:
-scss
-Copy code
+
+
+// Operators:
+
 .container {
   width: 100% - 20px;
 }
-Control Directives:
-scss
-Copy code
+
+// Control Directives:
 // Example of @if directive
+
 $theme: light;
 
 body {
