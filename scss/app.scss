@@ -14,6 +14,7 @@ $colors: rgb(220, 76, 57), rgb(125, 57, 220), rgb(220, 57, 168);
 
 $large: 300px;
 
+$buttonWidth: 100px;
 // nesting
 
 body {
@@ -91,12 +92,23 @@ body {
     display: flex;
     gap: 30px;
 
+    p {
+      &:hover {
+        transform: scale(1.2);
+        
+      }
+    }
+
     p:nth-child(1) {
       @include customFunc;
+      width: 100px - 20px; // operatiors + - * / 
     }
 
     p:nth-child(2) {
       @include customFunc(red);
+      &:hover {
+        transform: scale(1.5);
+      }
     }
 
     p:nth-child(3) {

@@ -44,17 +44,24 @@ body .button_container2 {
   display: flex;
   gap: 30px;
 }
+body .button_container2 p:hover {
+  transform: scale(1.2);
+}
 body .button_container2 p:nth-child(1) {
   padding: 10px;
   background-color: white;
   border: none;
   border-radius: 10px 20px 10px 10px;
+  width: 80px;
 }
 body .button_container2 p:nth-child(2) {
   padding: 10px;
   background-color: red;
   border: none;
   border-radius: 10px 20px 10px 10px;
+}
+body .button_container2 p:nth-child(2):hover {
+  transform: scale(1.5);
 }
 body .button_container2 p:nth-child(3) {
   padding: 10px;
