@@ -20,5 +20,47 @@ body button, body p {
   cursor: pointer;
   max-width: 200px;
 }
+body .custom, body .container {
+  padding: 50px;
+  background-color: rgb(220, 57, 168);
+  border: none;
+  border-radius: 10px 20px 10px 10px;
+  margin-right: 20px;
+}
+body .container {
+  margin-top: 20px;
+}
+body .button_container p {
+  padding: 10px;
+  background-color: rgb(220, 76, 57);
+  border: none;
+  border-radius: 10px 20px 10px 10px;
+}
+body .button_container {
+  display: flex;
+  gap: 20px;
+}
+body .button_container2 {
+  display: flex;
+  gap: 30px;
+}
+body .button_container2 p:nth-child(1) {
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 10px 20px 10px 10px;
+}
+body .button_container2 p:nth-child(2) {
+  padding: 10px;
+  background-color: red;
+  border: none;
+  border-radius: 10px 20px 10px 10px;
+}
+body .button_container2 p:nth-child(3) {
+  padding: 10px;
+  background-color: green;
+  border: none;
+  border-radius: 10px 20px 10px 10px;
+}
 
 /*# sourceMappingURL=app.css.map */

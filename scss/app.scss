@@ -39,13 +39,68 @@ body {
     padding: 1rem;
     border: none;
     cursor: pointer;
-    max-width: 200px
+    max-width: 200px;
   }
 
-
-    //   <!-- imporitn gbutton property to p tag -->
-    // inherit button properties to p tag
+  //   <!-- imporitn gbutton property to p tag -->
+  // inherit button properties to p tag
   p {
     @extend button;
+  }
+
+  .custom {
+    padding: 50px;
+    background-color: nth($colors, 3);
+    border: none;
+    border-radius: 10px 20px 10px 10px;
+    margin-right: 20px;
+  }
+
+  .container {
+    margin-top: 20px;
+    @extend .custom;
+  }
+
+  //  created template it will compile only when we extend it and use
+
+  %template {
+    padding: 10px;
+    background-color: nth($colors, 1);
+    border: none;
+    border-radius: 10px 20px 10px 10px;
+  }
+
+  .button_container {
+    display: flex;
+    gap: 20px;
+    p {
+      @extend %template;
+    }
+  }
+
+  // its also extendar as above its function with parameter so its more dynamic
+  @mixin customFunc($color: white) {
+    // white wiill be default if we dont pass the argue
+    padding: 10px;
+    background-color: $color;
+    border: none;
+    border-radius: 10px 20px 10px 10px;
+  }
+
+  .button_container2 {
+    display: flex;
+    gap: 30px;
+
+    p:nth-child(1) {
+      @include customFunc;
+    }
+
+    p:nth-child(2) {
+      @include customFunc(red);
+    }
+
+    p:nth-child(3) {
+      @include customFunc(green);
+    }
   }
 }
