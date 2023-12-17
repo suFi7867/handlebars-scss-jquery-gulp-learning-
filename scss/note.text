@@ -1,0 +1,2 @@
+command : sass -w app.scss app.css
+// for compile

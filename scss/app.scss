@@ -1,0 +1,42 @@
+// import 
+@use "_newcolors.scss" as color;
+@import "_colors.scss";
+// importing 2 files with same color varibles overriting each other 
+// so use use as a variable and use variables using dot notation
+
+// variable 
+// $color1: rgb(170, 217, 224);
+// $color2: rgb(32, 23, 166);
+// $color3: rgb(245, 208, 208);
+
+/// Colors aray
+$colors: rgb(220, 76, 57),rgb(125, 57, 220),rgb(220, 57, 168);
+ 
+
+$large: 300px;
+
+
+// nesting
+
+body{
+
+    background-color: color.$color1;
+
+    h3{
+        color: nth($colors, 2);
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+
+    > .myClass{
+        padding: 20px;
+        border: 10px ;
+        border: 1px solid red;
+    }
+
+    height: 2px;
+}
+
