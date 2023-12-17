@@ -1,0 +1,116 @@
+///// [1] basic ////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+
+   <script src="./handlebars.js"></script>
+</head>
+<body>
+    <h1>Users</h1>
+
+    <ul class="users-container"></ul>
+
+    <script id="character-template" type="text/x-handlebars-template">
+        <li class="user">
+            <h2>{{name}}</h2>
+            <h2>email :{{email}}</h2>
+            <h2>{{location}}</h2>
+        </li>
+
+    </script>
+</body>
+</html>
+
+
+> JS 
+
+const cast = {
+  characters: [
+    { name: "sufi", email: "sufi@gmail.com", location: "india" },
+    { name: "ali", email: "ali@gmail.com", location: "india" },
+    { name: "sohel", email: "sohel@gmail.com", location: "india" },
+    { name: "saurabh", email: "saurabh@gmail.com", location: "india" },
+  ],
+};
+
+$(document).ready(function () {
+  var userTemplate = $("#character-template").html();
+
+  var compliedUsersTemp = Handlebars.compile(userTemplate);
+
+  console.log(compliedUsersTemp(cast.characters[2]))
+
+  $(".users-container").html(compliedUsersTemp(cast.characters[2]));
+
+});
+
+
+///////////////////////////////////////////////////
+
+
+//////////// [2] with loop  /////////
+
+    <h1>Users</h1>
+
+    <ul class="users-container"></ul> 
+
+    <script id="users-template" type="text/x-handlebars-template">
+      {{#each users}}
+        <li class="user">
+          <h2>{{@index}} {{@first}} {{@last}} {{name}}</h2>
+          <h2>Email :{{email}}</h2>
+          <h2>Location: {{location}}</h2>
+        </li>
+      {{/each}}
+    </script>
+
+
+<!--  will give index in loop  : {{@index}}  -->
+<!--  return boolean if index is first : {{@first}}  -->
+<!--   same as above : {{@last}} -->
+
+
+///////////// [3]  for simple array loop with this  /////////////////////
+const userData = {
+  users: ["sufi", "ali", "sohel", "saurabh"],
+};
+
+    <li class="user">
+          <h2>{{this}}</h2>
+        </li>
+      {{/each}}
+    </script>
+
+////////////////////////////////////
+
+
+
+///////////  [4]  if else /////////////////////////
+
+    <script id="users-template" type="text/x-handlebars-template">
+      {{#each users}}
+        <li class="user">
+          <img src={{image}} alt="" />
+          <h2>{{@index}} {{@first}} {{@last}} {{name}}</h2>
+          <h2>Email :{{email}}</h2>
+
+          <!-- complete Condition -->
+          {{#if location}} <h2>Location: {{location}}</h2> {{/if}}
+
+          <!-- if - else if-  if   -->
+          <h2> Location:
+            {{#if location}} {{location}} {{else if otherLocatio}} {{otherLocatio}} {{else}} Dont Know {{/if}}
+          </h2>
+
+        </li>
+      {{/each}}
+    </script>
+
+//////////////////////

@@ -1,0 +1,94 @@
+
+Handlebars is a popular templating engine for JavaScript. 
+It is often used in web development to generate dynamic content on the client side. 
+
+
+1. Variables:
+{{ variableName }}
+
+2. Expressions:
+{{ expression }}
+
+3. If statements:
+
+{{#if condition}}
+  Content to show if condition is true
+{{else}}
+  Content to show if condition is false
+{{/if}}
+
+
+4. Unless statements (opposite of if):
+
+{{#unless condition}}
+  Content to show if condition is false
+{{else}}
+  Content to show if condition is true
+{{/unless}}
+
+
+5. Iterating over an array:
+
+{{#each array}}
+  {{this}} <!-- current array element -->
+{{/each}}
+
+6. Iterating with index:
+
+{{#each array}}
+  {{@index}}: {{this}} <!-- index and current array element -->
+{{/each}}
+
+7. Custom helpers:
+
+{{myHelper arg1 arg2}}
+
+
+8. Block helpers:
+
+{{#myHelper arg1 arg2}}
+  <!-- Content to render if the helper returns true -->
+{{else}}
+  <!-- Content to render if the helper returns false -->
+{{/myHelper}}
+
+
+9. Partial templates:
+
+{{> partialName}}
+
+
+10. HTML Escaping:
+By default, Handlebars escapes HTML entities. To output raw HTML, use triple curly braces:
+
+{{{ variableWithHTML }}}
+
+11. Comment:
+
+{{!-- This is a comment --}}
+
+12. Accessing properties:
+
+{{object.property}}
+
+
+13. Working with subexpressions:
+
+{{capitalize (toLowerCase variable)}}
+
+
+14. Inline if:
+
+{{#if condition}}True{{/if}}
+
+15. Custom Helpers:
+
+Handlebars.registerHelper('helperName', function(options) {
+  // Helper logic
+  return 'result';
+});
+
+////// 
+
+Use the helper in a template:
+{{helperName arg1 arg2}}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src="./handlebars.js"></script>
+
+    <style>
+      .users-container {
+        background: #eeee;
+      }
+      .user {
+        margin-top: 10px;
+        padding: 20px;
+        list-style-type: none;
+        display: flex;
+        gap: 10px;
+        background: white;
+      }
+
+      
+      .user > div{
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Users</h1>
+
+    <ul class="users-container"></ul>
+
+    <script id="users-template" type="text/x-handlebars-template">
+      {{#each users}}
+        <li class="user">
+          <img src={{image}} alt="" />
+
+          <div>
+            <h2>{{@index}} {{@first}} {{@last}} </h2>
+            <h2> Name : {{name}}</h2>
+
+            <h2>Email :{{email}}</h2>
+
+            <!-- if else if if   -->
+            <h2>
+              Location:
+              {{#if location}} {{location}} {{else if otherLocatio}}
+                {{otherLocatio}}
+              {{else}} Dont Know {{/if}}
+            </h2>
+
+            <!-- unless -->
+            {{#unless location}}
+              <h2>Unless exa: {{otherLocatio}}</h2>
+            {{/unless}}
+
+          
+
+
+
+          </div>
+          <!-- {{#unless condition}}
+      Content to show if condition is false
+    {{else}}
+      Content to show if condition is true
+    {{/unless}} -->
+
+        </li>
+      {{/each}}
+    </script>
+  </body>
+</html>
+
+<!--  will give index in loop  : {{@index}}  -->
+<!--  return boolean if index is first : {{@first}}  -->
+<!--   same as above : {{@last}} -->
