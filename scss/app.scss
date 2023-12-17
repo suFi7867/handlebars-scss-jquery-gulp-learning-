@@ -1,42 +1,51 @@
-// import 
+// import
 @use "_newcolors.scss" as color;
 @import "_colors.scss";
-// importing 2 files with same color varibles overriting each other 
+// importing 2 files with same color varibles overriting each other
 // so use use as a variable and use variables using dot notation
 
-// variable 
+// variable
 // $color1: rgb(170, 217, 224);
 // $color2: rgb(32, 23, 166);
 // $color3: rgb(245, 208, 208);
 
 /// Colors aray
-$colors: rgb(220, 76, 57),rgb(125, 57, 220),rgb(220, 57, 168);
- 
+$colors: rgb(220, 76, 57), rgb(125, 57, 220), rgb(220, 57, 168);
 
 $large: 300px;
 
-
 // nesting
 
-body{
+body {
+  background-color: color.$color1;
 
-    background-color: color.$color1;
+  h3 {
+    color: nth($colors, 2);
+  }
 
-    h3{
-        color: nth($colors, 2);
-    }
+  a {
+    text-decoration: none;
+  }
 
-    a{
-        text-decoration: none;
-    }
+  > .myClass {
+    padding: 20px;
+    border: 10px;
+    border: 1px solid $color2;
+  }
+
+  button {
+    background-color: $color3;
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    max-width: 200px
+  }
 
 
-    > .myClass{
-        padding: 20px;
-        border: 10px ;
-        border: 1px solid red;
-    }
-
-    height: 2px;
+    //   <!-- imporitn gbutton property to p tag -->
+    // inherit button properties to p tag
+  p {
+    @extend button;
+  }
 }
-

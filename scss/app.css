@@ -1,6 +1,5 @@
 body {
   background-color: rgb(84, 87, 3);
-  height: 2px;
 }
 body h3 {
   color: rgb(125, 57, 220);
@@ -11,7 +10,15 @@ body a {
 body > .myClass {
   padding: 20px;
   border: 10px;
-  border: 1px solid red;
+  border: 1px solid rgb(7, 3, 56);
+}
+body button, body p {
+  background-color: rgb(56, 9, 29);
+  color: white;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  max-width: 200px;
 }
 
 /*# sourceMappingURL=app.css.map */
