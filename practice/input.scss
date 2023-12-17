@@ -1,0 +1,223 @@
+$screen-xs: 320px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min: $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone: $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet: $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md: 1025px !default;
+$screen-md-min: $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop: $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg: 1920px !default;
+$screen-lg-min: $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop: $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base, 13.5%) !default; // #222
+$gray-dark: lighten($gray-base, 20%) !default; // #333
+$gray: lighten($gray-base, 33.5%) !default; // #555
+$gray-light: lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter: lighten($gray-base, 93.5%) !default; // #eee
+$gray-custom-filter: #b1b1b1;
+
+$brand-primary: #255c7b !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+
+$link-color: black;
+$icon-font-family: "arial";
+$btn-primary-bg: #1b75a1;
+
+.DesignedForYou {
+  background: #f6f6f6;
+  width: 100%;
+  max-width: 1600px;
+  margin-top: 50px;
+  // @media (min-width: $screen-sm) {
+  //   padding: 24px 35px 32px;
+  // }
+
+  // .noPad-right {
+  //   @media (min-width: $screen-sm-min) {
+  //     padding-right: 0px;
+  //   }
+  // }
+
+  .main-container {
+    display: flex;
+    border: 1px solid;
+    padding: 40px;
+    justify-content: space-between;
+
+    .left-content {
+      width: 300px;
+      border: 1px solid;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+
+      .title-row {
+        h3 {
+          margin: 0;
+
+          font-size: 24px;
+          @media (min-width: $screen-sm) {
+            font-size: 36px;
+          }
+        }
+
+        hr {
+          border-color: #000;
+        }
+      }
+
+      .secondary-tabs {
+        // @media (min-width: $screen-md) {
+        //   padding-right: 20px;
+        // }
+
+        .secondary-tab {
+          font-size: 20px;
+          letter-spacing: 0.7px;
+          width: fit-content;
+          color: #2678ad;
+          // text-transform: uppercase;
+          margin-top: 15px;
+          border-bottom: 3px solid #f6f6f6;
+          cursor: pointer;
+          // @media (min-width: $screen-sm) {
+          //   // padding: 4px 0px 4px 8px;
+          //   // margin: 26px 0px;
+          //   font-size: 14px;
+          //   border-left: 3px solid #f6f6f6;
+          //   border-bottom: 0;
+          // }
+          // @media (min-width: $screen-md) {
+          //   // padding: 4px 0px 4px 24px;
+          // }
+          // @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+          //   // margin: 14px 0px;
+          // }
+
+          &:first-of-type {
+            @media (max-width: $screen-xs-max) {
+              // margin-left: 15px;
+            }
+          }
+
+          &.is-active {
+            font-weight: bold;
+            color: #343434;
+            border-bottom: 1px solid #343434;
+            // @media (min-width: $screen-sm) {
+            //   border-left: 3px solid $link-color;
+            //   border-bottom: 0;
+            // }
+          }
+        }
+      }
+    }
+
+    .right-content {
+      width: 1150px;
+
+      // border: 1px solid;
+      background: white;
+
+      .inactive-tab-content {
+        display: none;
+      }
+
+      > img {
+        width: 100%;
+        max-height: 740px;
+        border: 1px solid;
+        object-fit: cover;
+      }
+
+      .info {
+        padding: 5px 30px 10px 30px;
+        background: white;
+        > h4 {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  // .main-row {
+  //   @media (min-width: $screen-sm) {
+  //     display: flex;
+  //     flex-flow: row;
+  //     align-items: stretch;
+  //     margin-top: 16px;
+  //   }
+  // }
+
+  // .secondary-tabs {
+  //   // @media (min-width: $screen-md) {
+  //   //   padding-right: 20px;
+  //   // }
+
+  //   .secondary-tab {
+  //     font-size: 13px;
+  //     letter-spacing: 0.7px;
+  //     // text-transform: uppercase;
+  //     margin-top: 15px;
+  //     border-bottom: 3px solid #f6f6f6;
+  //     cursor: pointer;
+  //     @media (min-width: $screen-sm) {
+  //       // padding: 4px 0px 4px 8px;
+  //       // margin: 26px 0px;
+  //       font-size: 14px;
+  //       border-left: 3px solid #f6f6f6;
+  //       border-bottom: 0;
+  //     }
+  //     @media (min-width: $screen-md) {
+  //       // padding: 4px 0px 4px 24px;
+  //     }
+  //     @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  //       // margin: 14px 0px;
+  //     }
+
+  //     &:first-of-type {
+  //       @media (max-width: $screen-xs-max) {
+  //         // margin-left: 15px;
+  //       }
+  //     }
+
+  //     &.is-active {
+  //       font-weight: bold;
+  //       border-bottom: 3px solid $link-color;
+  //       @media (min-width: $screen-sm) {
+  //         border-left: 3px solid $link-color;
+  //         border-bottom: 0;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // .content-container {
+  //   border: 1px solid;
+  // }
+}

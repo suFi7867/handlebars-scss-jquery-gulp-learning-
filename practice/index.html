@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- hadnlebar -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="./index.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="output.css" />
+    <title>Hello, world!</title>
+  </head>
+
+  <body>
+    <div class="DesignedForYou container"></div>
+
+    <script id="DesignedForYou-template" type="text/x-handlebars-template">
+      <div class="main-container">
+        <div class="left-content">
+          <div class="title-row">
+            <h3>{{headline}}</h3>
+            <hr class="col-xs-5" />
+          </div>
+
+
+
+          <div class="secondary-tabs">
+            {{#each secondary-tabs}}
+            <div class="secondary-tab scrollable-item {{#if map-features-data}}Map-featuresTab{{/if}}"
+              data-index="{{@index}}" data-option="{{tab}}" {{#if map-features-data}} data-title="{{tab}}"
+              data-feature="{{tab}}" {{/if}}>{{tab}}
+            </div>
+            {{/each}}
+
+
+
+          </div>
+
+          <a href="{{cta.href}}" class="btn btn-primary"
+            data-analytics="promotion|meet-our-homeowners:{{name}}-{{location}}|{{cta.text}}" role="button">Available in
+            these floorplans</a>
+        </div>
+
+        {{#each secondary-tabs}}
+        <div class="right-content {{#unless @index}}active-tab-content{{/unless}}" data-option="{{tab}}" data-index={{@index}}>
+          <img src={{image.src}} alt={{image.alt}} />
+          <div class="info">
+            <h4>{{headline}}</h4>
+            <div class="info__text">
+              {{description}}
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </script>
+  </body>
+</html>
